@@ -27,6 +27,7 @@ let publicDir='public';
     let module='admin';
     let from=[moduleDir,module,'resources/assets'].join('/');
     let to=[publicDir,'vendor','admin'].join('/');
-
+    mix.sass(from+'/sass/admin.scss',to+'/css');
+    mix.js([from + '/js/admin.js'], to + '/js/admin.js')
 
 })();
