@@ -25,6 +25,7 @@
         "psr-4": {
             "App\\": "app/",
             "ForIt\\Admin\\": "4it/admin/src/",
+            "ForIt\\Base\\": "4it/base/src/",
             "ForIt\\Front\\": "4it/front/src/"
         }
     },

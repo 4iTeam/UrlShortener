@@ -1,1 +1,1 @@
-<h1>Admin home page</h1>
+@extends('admin::layouts.app')
