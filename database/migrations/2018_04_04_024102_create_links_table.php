@@ -38,6 +38,10 @@ class CreateLinksTable extends Migration
      */
     public function down()
     {
+        Schema::table('links', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['tag_id']);
+        });
         Schema::dropIfExists('links');
     }
 }

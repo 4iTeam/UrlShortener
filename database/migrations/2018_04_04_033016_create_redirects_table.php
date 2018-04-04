@@ -31,6 +31,9 @@ class CreateRedirectsTable extends Migration
      */
     public function down()
     {
+        Schema::table('redirects',function(Blueprint $table){
+            $table->dropForeign(['link_id']);
+        });
         Schema::dropIfExists('redirects');
     }
 }

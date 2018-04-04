@@ -37,6 +37,10 @@ class CreateAccessesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stats');
+        Schema::table('accesses', function (Blueprint $table) {
+            $table->dropForeign(['link_id']);
+            $table->dropForeign(['redirect_id']);
+        });
+        Schema::dropIfExists('accesses');
     }
 }
