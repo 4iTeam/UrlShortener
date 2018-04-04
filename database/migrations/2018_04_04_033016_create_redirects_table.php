@@ -17,7 +17,7 @@ class CreateRedirectsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('link_id');
             $table->string('url',4000);
-            $table->longText('conditions')->nullable();
+            $table->longText('conditions');
             $table->timestamps();
             $table->foreign('link_id')->references('id')->on('links')
                 ->onDelete('cascade');
