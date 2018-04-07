@@ -15,18 +15,18 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key')->unique();
+            $table->string('key')->unique()->nullable();
             $table->string('url',4000);
-            $table->unsignedBigInteger('clicks');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedInteger('tag_id')->nullable();
-
+            $table->unsignedBigInteger('clicks')->default(0);
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('password')->nullable();//password lock
+            $table->string('token')->nullable();//session token to help guess manage their url
+            $table->longText('meta')->nullable();//metadata
             $table->timestamps();
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
-            $table->foreign('tag_id')
-                ->references('id')->on('tags');
+
 
         });
     }
@@ -40,7 +40,6 @@ class CreateLinksTable extends Migration
     {
         Schema::table('links', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
-            $table->dropForeign(['tag_id']);
         });
         Schema::dropIfExists('links');
     }

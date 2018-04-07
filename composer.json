@@ -27,7 +27,8 @@
             "App\\": "app/",
             "ForIt\\Admin\\": "4it/admin/src/",
             "ForIt\\Base\\": "4it/base/src/",
-            "ForIt\\Front\\": "4it/front/src/"
+            "ForIt\\Front\\": "4it/front/src/",
+            "ForIt\\Api\\": "4it/api/src/"
         }
     },
     "autoload-dev": {

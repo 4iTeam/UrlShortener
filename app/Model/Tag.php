@@ -11,5 +11,8 @@ namespace App\Model;
 
 class Tag extends Model
 {
-
+    protected $fillable=['name'];
+    function links(){
+        return $this->belongsToMany(Link::class);
+    }
 }

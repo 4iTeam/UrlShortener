@@ -2,12 +2,14 @@
 
 namespace App;
 
+use App\Model\Traits\User\ApiKeysTraits;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use ApiKeysTraits;
 
     /**
      * The attributes that are mass assignable.
@@ -16,6 +18,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password',
+        'role_id'
     ];
 
     /**

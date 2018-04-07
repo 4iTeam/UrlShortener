@@ -1,5 +1,5 @@
 <?php
-namespace ForIT\Admin\Exceptions;
+namespace ForIt\Admin\Exceptions;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Symfony\Component\HttpFoundation\Response;
 class PermissionDenied extends HttpResponseException{
