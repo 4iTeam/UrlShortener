@@ -11,23 +11,5 @@ let mix = require('laravel-mix');
  |
  */
 
-let moduleDir='4it';
-let publicDir='public';
-
-(function() {
-    let module='front';
-    let from=[moduleDir,module,'resources/assets'].join('/');
-    let to=[publicDir].join('/');
-    mix.js(from+'/js/app.js', to+'/js')
-        .sass(from+'/sass/app.scss', to+'/css');
-
-})();
-
-(function() {
-    let module='admin';
-    let from=[moduleDir,module,'resources/assets'].join('/');
-    let to=[publicDir,'vendor','admin'].join('/');
-    mix.sass(from+'/sass/admin.scss',to+'/css');
-    mix.js([from + '/js/admin.js'], to + '/js/admin.js')
-
-})();
+mix.js('resources/assets/js/app.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css');
