@@ -9,7 +9,8 @@
 namespace App\Model;
 
 
-class Role
+class Role extends Model
 {
-
+    protected $fillable=['name','caps'];
+    public $timestamps=false;
 }

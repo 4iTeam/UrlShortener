@@ -159,9 +159,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
         ForIt\Base\Providers\BaseServiceProvider::class,
         ForIt\Admin\Providers\AdminProvider::class,
         ForIt\Front\Providers\FrontProvider::class,
+        ForIt\Api\Providers\ApiProvider::class,
 
     ],
 
