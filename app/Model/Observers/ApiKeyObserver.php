@@ -20,7 +20,7 @@ class ApiKeyObserver
         $apiKey->key=$this->randomKey();
     }
 
-    protected function randomKey($minLength=18,$maxLength=25, $attempt=3){
+    protected function randomKey($minLength=40,$maxLength=45, $attempt=3){
         $length=random_int($minLength,$maxLength);
         $key=str_random($length);
         $failed=0;

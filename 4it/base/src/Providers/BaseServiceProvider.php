@@ -8,7 +8,6 @@
 
 namespace ForIt\Base\Providers;
 
-
 use App\Model\Link;
 use ForIt\Base\Services\HashIds;
 use ForIt\Base\Support\Helper;
@@ -23,6 +22,7 @@ class BaseServiceProvider extends ServiceProvider
     }
     function register(){
         $this->app->singleton(HashIds::class);
+        $this->app->register(ConsoleProvider::class);
         $this->mergeConfigFrom(
             __DIR__.'/../../config/hashids.php', 'hashids'
         );

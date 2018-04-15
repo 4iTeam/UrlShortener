@@ -15,6 +15,7 @@ class CreateApiKeysTable extends Migration
     {
         Schema::create('api_keys', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name')->nullable();//allow name api
             $table->string('key')->unique();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

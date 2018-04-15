@@ -12,9 +12,16 @@ namespace App\Model;
 
 use App\User;
 
+/**
+ * Class ApiKey
+ * @package App\Model
+ * @property $name
+ * @property $key
+ * @property $user_id
+ */
 class ApiKey extends Model
 {
-    protected $fillable=['key','user_id'];
+    protected $fillable=['name','key','user_id'];
 
     function user(){
         return $this->belongsTo(User::class);
