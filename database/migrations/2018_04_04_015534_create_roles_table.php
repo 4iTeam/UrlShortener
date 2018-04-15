@@ -19,7 +19,7 @@ class CreateRolesTable extends Migration
             $table->longText('caps')->nullable();
         });
         Schema::table('users',function(Blueprint $table){
-            $table->unsignedInteger('role_id')->after('password');
+            $table->unsignedInteger('role_id')->after('password')->nullable();
             $table->foreign('role_id')->references('id')->on('roles');
         });
     }
