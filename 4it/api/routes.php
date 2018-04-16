@@ -4,4 +4,5 @@ $this->get('/',function(){
 });
 
 //$this->get('test','TestController@index');
-$this->get('short','ShortUrlController@short');
+$this->get('short','ShortUrlController@short')->name('api.short');
+$this->post('short','ShortUrlController@short');
