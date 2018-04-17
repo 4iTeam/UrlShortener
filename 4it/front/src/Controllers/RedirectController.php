@@ -9,5 +9,6 @@ class RedirectController extends Controller{
         if($link){
             return redirect($link->url);
         }
+        abort(404);
     }
 }
